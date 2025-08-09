@@ -118,9 +118,9 @@ public class StockClassifierGP {
                     // map pctChange to one of five labels
                     int label;
                     if (pctChange >  2.0)       label = 0; // significant rise
-                    else if (  2.0 > pctChange >  0.5)  label = 1; // mild rise
+                    else if (  2.0 > pctChange  && pctChange >  0.5)  label = 1; // mild rise
                     else if (pctChange < -2.0)  label = 4; // significant fall
-                    else if (-0.5 < pctChange < -2.0)  label = 3; // mild fall
+                    else if (-0.5 < pctChange && pctChange < -2.0)  label = 3; // mild fall
                     else                        label = 2; // no change
 
                     double rsi   = Double.parseDouble(cols[6]);
